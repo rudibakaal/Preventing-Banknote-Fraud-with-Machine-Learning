@@ -19,11 +19,10 @@ for x in train.columns:
     if x != 'Class':
         train[x] = s.fit_transform(train[x].values.reshape(-1, 1)).astype('float64')
 
+
 train_features = train.drop('Class',axis=1)
 train_label = train.pop('Class')
 
-# print(train_features.shape)
-# print(train_label.shape)
 
 input_dim = train_features.shape[1]
 model = keras.models.Sequential()
